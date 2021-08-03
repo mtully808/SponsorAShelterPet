@@ -66,8 +66,8 @@ Once the project moves into development, the press release can be used as a touc
 
 </details>
 
-<details>
-  <summary>🐶 Click to read the Pertinent info for Developers! 🐱</summary>
+<!-- <details>
+  <summary>🐶 Click to read the Pertinent info for Developers! 🐱</summary> -->
 
 # :dog: Pertinent info for developers: :cat:
 
@@ -90,4 +90,4 @@ To make development easier I have:
 ## Author
 - Mikka Tully
 
-</details>
+<!-- </details> -->

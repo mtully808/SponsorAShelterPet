@@ -65,3 +65,29 @@ Once the project moves into development, the press release can be used as a touc
   What are you waiting for? Download the app and start saving our communities shelter pets!
 
 </details>
+
+<details>
+  <summary>🐶 Click to read the Pertinent info for Developers! 🐱</summary>
+
+# :dog: Pertinent info for developers: :cat:
+
+# Sponsor a Shelter Pet!
+Welcome to my very own web-app that will help increase shelter funds and animal adoption rates! Thank you for taking an interest in my code. Sponsor a Shelter Pet is a Javascript library used to help increase: shelter funds, sponsor's happiness, and adoption rates! Peruse the below topics to aid you in getting started working with this repo.
+***
+
+## Using this Repo
+You will find inside a breakdown of how I organized, created, and designed each feature of my Sponsor a Shelter Pet web-app. My folders are a good starting point to gain clarity into the organization and structure of my app. Within these folders is where you will find the code and styling related to the individual components and the features of these components.
+
+## Getting a Copy of this Repo
+If you haven’t already, please fork the repository on GitHub and clone your newly created repo down to your computer (then comes the fun part– exploring & learning)!
+
+## Installation
+Use the package manager npm to install all necessary dev dependencies for our repo – run the following terminal command: `npm install`
+To make development easier I have:
+  * Added nodemon as an npm start script. To automatically restart the node application when file changes in the directory are detected, run the following terminal command:`npm start`.
+  * Added webpack development mode as an npm start script. To automatically have webpack watch for and bundle changes, run the following terminal command: `npm run react-dev`.
+
+## Author
+- Mikka Tully
+
+</details>

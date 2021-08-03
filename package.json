@@ -1,0 +1,46 @@
+{
+  "name": "sponsor_a_shelter_pet",
+  "version": "1.0.0",
+  "description": "App to provide easy & fun sponsoring of shelter pets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "react-dev": "webpack --config ./webpack.config.js --mode development -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtully808/hr-bld17-mvp.git"
+  },
+  "author": "Mikka Tully",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtully808/hr-bld17-mvp/issues"
+  },
+  "homepage": "https://github.com/mtully808/hr-bld17-mvp#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-material-ui-carousel": "^2.2.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.30.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.24.0",
+    "mongoose": "^5.13.2",
+    "nodemon": "^2.0.9",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.5.0"
+  }
+}

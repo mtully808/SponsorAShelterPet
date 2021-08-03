@@ -1,5 +1,5 @@
 <details>
-  <summary>Click to read the Press Release!</summary>
+  <summary>🐕 Click to read the Press Release! 🐈</summary>
 
 # Sponsor a Shelter Pet! #
 Created with: animal shelters/rescues, the animals saved and the community who stands behind them, in mind - this app provides an easy & fun way for each party to benefit from the other!
@@ -72,7 +72,7 @@ Once the project moves into development, the press release can be used as a touc
 # :dog: Pertinent info for developers: :cat:
 
 # Sponsor a Shelter Pet!
-Welcome to my very own web-app that will help increase shelter funds and animal adoption rates! Thank you for taking an interest in my code. Sponsor a Shelter Pet is a Javascript library used to help increase: shelter funds, sponsor's happiness, and adoption rates! Peruse the below topics to aid you in getting started working with this repo.
+Welcome to my very own web-app, thank you for taking an interest in my code! Helping animals is very near and dear to my heart, so thinking up this idea and working on the app has been pure bliss! I took this app from idea to a proof of concept in only 48 short hours. However, I don't plan to stop working on it, so the form you see now may have more hours of time invested than my initial 48 hour time-constraint. Sponsor a Shelter Pet is a Javascript library used to help increase: shelter funds, sponsor's happiness, and adoption rates! Peruse the below topics to aid you in getting started working with this repo.
 ***
 
 ## Using this Repo

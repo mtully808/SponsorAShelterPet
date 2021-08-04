@@ -1,7 +1,7 @@
-const PetInfo = require('../models/petInfo.js');
+// const PetInfo = require('../models/petInfo.js');
 
-const updatePetInfo = () => {
+// const updatePetInfo = () => {
 
-};
+// };
 
-module.exports = updatePetInfo;
+// module.exports = updatePetInfo;

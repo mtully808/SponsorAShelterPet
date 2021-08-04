@@ -87,6 +87,11 @@ To make development easier I have:
   * Added nodemon as an npm start script. To automatically restart the node application when file changes in the directory are detected, run the following terminal command:`npm start`.
   * Added webpack development mode as an npm start script. To automatically have webpack watch for and bundle changes, run the following terminal command: `npm run react-dev`.
 
+## Postgres Database Setup/Access
+Navigate into the 'database' folder, copy the `config.example.js` file and rename it to `config.js`.
+
+Inside this file you will add the necessary credentials to create connection to your PSQL databse (used inside the database index.js file). Note: For most the 'host' and 'port' can be left as-is in the example file, you will only need to change these if you explicitly set up your Postgres differently.
+
 ## Author
 - Mikka Tully
 

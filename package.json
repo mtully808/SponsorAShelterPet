@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server",
-    "react-dev": "webpack --config ./webpack.config.js --mode development -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "react-dev": "webpack --config ./webpack.config.js --mode development -w"
   },
   "repository": {
     "type": "git",
@@ -15,9 +14,9 @@
   "author": "Mikka Tully",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mtully808/hr-bld17-mvp/issues"
+    "url": "https://github.com/mtully808/SponsorAShelterPet/issues"
   },
-  "homepage": "https://github.com/mtully808/hr-bld17-mvp#readme",
+  "homepage": "https://github.com/mtully808/SponsorAShelterPet#readme",
   "dependencies": {
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",

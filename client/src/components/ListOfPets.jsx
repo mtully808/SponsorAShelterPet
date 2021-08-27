@@ -1,13 +1,14 @@
 /* eslint-disable require-jsdoc */
 import React, {useContext, useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import {List, ListItem, ListItemText, ListItemAvatar,
+import {List, ListItem, ListItemText, ListItemAvatar, Grid, Divider,
   Avatar, Typography, Button, ButtonGroup} from '@material-ui/core';
 import {ProductContext} from './context.js';
 // import {DeleteOutlineOutlinedIcon} from
 //   '@material-ui/icons';
 
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
+import DeleteOutlineOutlinedIcon from
+  '@material-ui/icons/DeleteOutlineOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +36,29 @@ export default function ListOfPets() {
           </ListItemAvatar>
           <ListItemText
             primary={
-              pet.name
+              <Grid
+                container
+                direction="row-reverse"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <ButtonGroup
+                  variant="text" color="disabled" size="small"
+                  aria-label="text primary button group" >
+                  <Button>
+                    <DeleteOutlineOutlinedIcon
+                      fontSize="small" color="disabled"/>
+                  </Button>
+                  <Button>
+                    <EditOutlinedIcon
+                      fontSize="small" color="disabled"/>
+                  </Button>
+                </ButtonGroup>
+                <Typography>
+                  {pet.name}
+                </Typography>
+              </Grid>
+              // pet.name
             }
             secondary={
               <React.Fragment>
@@ -48,9 +71,9 @@ export default function ListOfPets() {
                   {pet.age}, {pet.breed}
                   <br/>
                 </Typography>
-                <ButtonGroup
+                {/* <ButtonGroup
                   variant="text" color="disabled" size="small"
-                  aria-label="text primary button group">
+                  aria-label="text primary button group" >
                   <Button>
                     <DeleteOutlineOutlinedIcon
                       fontSize="small" color="disabled"/>
@@ -59,11 +82,12 @@ export default function ListOfPets() {
                     <EditOutlinedIcon
                       fontSize="small" color="disabled"/>
                   </Button>
-                </ButtonGroup>
+                </ButtonGroup> */}
                 {pet.description}
               </React.Fragment>
             }
           />
+          <Divider />
         </ListItem>
       ))}
     </List>

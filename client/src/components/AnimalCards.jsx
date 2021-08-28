@@ -51,7 +51,7 @@ export default function AnimalInfoCards() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState({});
   const [heartClicked, setHeartclicked] = React.useState({});
-  const {allPets, updateAllPets,
+  const {allPets, updateAllPets, refreshPets,
     favorites, updateFavorites} = useContext(ProductContext);
 
 
@@ -114,7 +114,7 @@ export default function AnimalInfoCards() {
 
   useEffect(() => {
     fetchAllPets();
-  }, []);
+  }, [refreshPets]);
 
   return (
     <Grid container className={classes.rootContainer} spacing={2}>

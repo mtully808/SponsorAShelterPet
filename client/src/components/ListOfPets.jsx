@@ -2,7 +2,7 @@
 import React, {useContext, useEffect} from 'react';
 import DeleteButton from './DeleteButton.jsx';
 import {makeStyles} from '@material-ui/core/styles';
-import {List, ListItem, ListItemText, ListItemAvatar, Grid, Divider,
+import {List, ListItem, ListItemText, ListItemAvatar, Grid,
   Avatar, Typography, Button, ButtonGroup} from '@material-ui/core';
 import {ProductContext} from './context.js';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
@@ -19,11 +19,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ListOfPets() {
   const classes = useStyles();
-  const {allPets} = useContext(ProductContext);
+  const {allPets, refreshPets} = useContext(ProductContext);
 
-  useEffect(() => {}, [allPets]);
-
-
+  useEffect(() => {}, [allPets, refreshPets]);
 
   return (
     <List className={classes.root}>
@@ -47,7 +45,7 @@ export default function ListOfPets() {
                     <DeleteOutlineOutlinedIcon
                       fontSize="small" color="disabled"/>
                   </Button> */}
-                  <DeleteButton />
+                  <DeleteButton id={pet.id}/>
                   <Button>
                     <EditOutlinedIcon
                       fontSize="small" color="disabled"/>

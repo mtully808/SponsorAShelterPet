@@ -118,13 +118,34 @@ const getOnePet = function(petName, callback) {
       });
 };
 
+const deletePet = function(petID, callback) {
+  const deleteAPet =
+    `DELETE
+    FROM
+      pets
+    WHERE
+      id=$1;`;
+
+  console.log('inside psql delete function - petID', petID);
+  psqlConnection.query(
+      deleteAPet,
+      [petID],
+      function(err, results) {
+        if (err) {
+          callback(err, null);
+        } else {
+          callback(null, 'successfully deleted animal');
+        }
+      },
+  );
+};
+
 module.exports = {
   postPet,
   getAllPets,
   getOnePet,
+  deletePet,
 };
-
-
 
 
 // const mongoose = require('mongoose');

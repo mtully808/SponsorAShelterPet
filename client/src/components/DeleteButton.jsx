@@ -1,13 +1,18 @@
 /* eslint-disable require-jsdoc */
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import {ProductContext} from './context.js';
 import {Button, Dialog, DialogActions, DialogContent, DialogContentText,
-  DialogTitle, Divider} from '@material-ui/core';
+  DialogTitle} from '@material-ui/core';
 import DeleteOutlineOutlinedIcon from
   '@material-ui/icons/DeleteOutlineOutlined';
 
 
-export default function DeleteButton() {
+export default function DeleteButton(props) {
   const [open, setOpen] = React.useState(false);
+
+  const {refreshPets, removePetToggle} = useContext(ProductContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -17,7 +22,24 @@ export default function DeleteButton() {
     setOpen(false);
   };
 
-  // useEffect(() => {}, [allPets]);
+  const handleDeletion = () => {
+    event.preventDefault();
+    console.log('in handle delete, pre-axios client side');
+    axios.delete(`/animalAdopted`, {
+      params: {
+        petId: props.id,
+      },
+    })
+        .then((response) => {
+          console.log('inside then statement????');
+          removePetToggle(!refreshPets);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -52,7 +74,7 @@ export default function DeleteButton() {
             variant="contained" color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose}
+          <Button onClick={handleDeletion}
             variant="contained" color="primary" autoFocus>
             Animal Adopted - delete from database!
           </Button>
@@ -61,3 +83,7 @@ export default function DeleteButton() {
     </div>
   );
 }
+
+DeleteButton.propTypes = {
+  id: PropTypes.number,
+};

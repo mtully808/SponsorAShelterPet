@@ -1,5 +1,6 @@
 /* eslint-disable require-jsdoc */
 import React, {useContext, useEffect} from 'react';
+import axios from 'axios';
 import DeleteButton from './DeleteButton.jsx';
 import {makeStyles} from '@material-ui/core/styles';
 import {List, ListItem, ListItemText, ListItemAvatar, Grid,
@@ -19,9 +20,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ListOfPets() {
   const classes = useStyles();
-  const {allPets, refreshPets} = useContext(ProductContext);
+  const {allPets, refreshPets, updateAllPets, updateFavorites,
+    expanded, heartClicked} =
+    useContext(ProductContext);
 
-  useEffect(() => {}, [allPets, refreshPets]);
+  const fetchAllPets = () => {
+    axios.get(`/shelterPets`)
+        .then((response) => {
+          updateAllPets(response.data);
+          response.data.map((pet) => (
+            expanded[pet.name] = false,
+            heartClicked[pet.name] = false
+          ));
+          updateFavorites(0);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  };
+
+  useEffect(() => {
+    fetchAllPets();
+  }, [allPets, refreshPets]);
 
   return (
     <List className={classes.root}>

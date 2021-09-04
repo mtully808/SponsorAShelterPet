@@ -114,6 +114,8 @@ function App() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [favorites, updateFavorites] = useState(0);
   const [refreshPets, removePetToggle] = useState(false);
+  const [expanded, setExpanded] = React.useState({});
+  const [heartClicked, setHeartclicked] = React.useState({});
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -189,7 +191,9 @@ function App() {
       newPet, updateNewPet,
       allPets, updateAllPets,
       favorites, updateFavorites,
-      refreshPets, removePetToggle}}>
+      refreshPets, removePetToggle,
+      expanded, setExpanded,
+      heartClicked, setHeartclicked}}>
       <Container maxWidth="lg">
         <div className={classes.grow}>
           <AppBar position="static">

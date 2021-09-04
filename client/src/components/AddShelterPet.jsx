@@ -12,20 +12,17 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-// function rand() {
-//   return Math.round(Math.random() * 20) - 10;
-// }
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
 
-// function getModalStyle() {
-//   const top = 50 + rand();
-//   const left = 50 + rand();
+function getModalStyle() {
+  const top = 50 + rand();
 
-//   return {
-//     top: `${top}%`,
-//     left: `${left}%`,
-//     transform: `translate(-${top}%, -${left}%)`,
-//   };
-// }
+  return {
+    top: `${top}%`,
+  };
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
       width: '25ch',
     },
   },
+  div: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   paper: {
     position: 'absolute',
     width: 400,
@@ -41,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    padding: '4px',
   },
   rootCard: {
     minWidth: 275,
@@ -63,7 +66,7 @@ export default function AddShelterPetForm() {
     updateAllPets} = useContext(ProductContext);
 
   const classes = useStyles();
-  // const [modalStyle] = React.useState(getModalStyle);
+  const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
   function changeHandler(event) {
@@ -138,6 +141,8 @@ export default function AddShelterPetForm() {
         </CardActions>
       </Card>
       <Modal
+        style={{display: 'flex', alignItems: 'center',
+          justifyContent: 'center'}}
         open={open}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
@@ -146,10 +151,14 @@ export default function AddShelterPetForm() {
         <form className={classes.root}
           noValidate
           autoComplete="off"
-          onSubmit={handleAddPetSubmit}>
-          <Paper variant="outlined">
-            <h2>Adding a New Shelter Animal?</h2>
-            <div>
+          onSubmit={handleAddPetSubmit}
+          style={modalStyle}>
+          <Paper variant="outlined"
+            style={{display: 'flex', alignItems: 'center',
+              justifyContent: 'center'}}
+            elevation={3}>
+            <div style={modalStyle}>
+              <h2>Adding a New Shelter Animal?</h2>
               <TextField
                 required
                 id="animalName"
@@ -345,10 +354,11 @@ export default function AddShelterPetForm() {
                 value={newPet.shortDescription}
                 onChange={changeHandler}
               />
+              <br/>
+              <Button variant="contained" color="primary" type="submit">
+                Submit!
+              </Button>
             </div>
-            <Button variant="contained" color="primary" type="submit">
-              Submit!
-            </Button>
           </Paper>
         </form>
       </Modal>

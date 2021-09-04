@@ -113,6 +113,9 @@ function App() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [favorites, updateFavorites] = useState(0);
+  const [refreshPets, removePetToggle] = useState(false);
+  const [expanded, setExpanded] = React.useState({});
+  const [heartClicked, setHeartclicked] = React.useState({});
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -187,7 +190,10 @@ function App() {
     <ProductContext.Provider value={{
       newPet, updateNewPet,
       allPets, updateAllPets,
-      favorites, updateFavorites}}>
+      favorites, updateFavorites,
+      refreshPets, removePetToggle,
+      expanded, setExpanded,
+      heartClicked, setHeartclicked}}>
       <Container maxWidth="lg">
         <div className={classes.grow}>
           <AppBar position="static">

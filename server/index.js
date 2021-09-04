@@ -88,6 +88,20 @@ app.post('/shelterPets', (req, res) => {
       });
 });
 
+app.delete('/animalAdopted', (req, res) => {
+  const petID = req.query.petId;
+  console.log('pet id in server side index', petID);
+  updatePetInfo.deletePet(
+      petID,
+      function(err, results) {
+        if (err) {
+          res.status(400).send(err);
+        } else {
+          res.status(204).send('successfully removed pet from database');
+        }
+      });
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

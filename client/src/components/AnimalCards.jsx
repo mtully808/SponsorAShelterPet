@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
 import Carousel from 'react-material-ui-carousel';
 import Divider from '@material-ui/core/Divider';
-import pink from '@material-ui/core/colors/pink';
+// import pink from '@material-ui/core/colors/pink';
 // import { createTheme } from '@material-ui/core/styles';
 
 // const theme = createTheme({
@@ -49,10 +49,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AnimalInfoCards() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState({});
-  const [heartClicked, setHeartclicked] = React.useState({});
-  const {allPets, updateAllPets,
-    favorites, updateFavorites} = useContext(ProductContext);
+
+  const {allPets, updateAllPets, refreshPets,
+    favorites, updateFavorites, expanded, setExpanded,
+    heartClicked, setHeartclicked} = useContext(ProductContext);
 
 
   const fetchAllPets = () => {
@@ -114,7 +114,7 @@ export default function AnimalInfoCards() {
 
   useEffect(() => {
     fetchAllPets();
-  }, []);
+  }, [refreshPets]);
 
   return (
     <Grid container className={classes.rootContainer} spacing={2}>
@@ -153,9 +153,11 @@ export default function AnimalInfoCards() {
                   </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites" onClick={() => handleHeartClick(pet.name)}>
+                  <IconButton aria-label="add to favorites"
+                    onClick={() => handleHeartClick(pet.name)}>
                     <FavoriteIcon
-                      style={heartClicked[pet.name] ? {color: '#f50057'} : {color: 'grey'}}/>
+                      style={heartClicked[pet.name] ?
+                        {color: '#f50057'} : {color: 'grey'}}/>
                   </IconButton>
                   <IconButton aria-label="share">
                     <ShareIcon />
